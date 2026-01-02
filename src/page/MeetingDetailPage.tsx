@@ -20,7 +20,7 @@ import { useState, useEffect, useRef } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { getTranscriptByAudioId, getSummaryByAudioId, getAudioList } from "@/api"
 import { useColorModeValue } from "@/components/ui/color-mode"
-// import { ChatBubble } from "@/components/ChatBubble"
+import { ChatBubble } from "@/components/ChatBubble"
 
 export default function MeetingDetailPage() {
   // State for resizable summary pane (desktop only)
@@ -958,7 +958,7 @@ export default function MeetingDetailPage() {
       </Box>
 
       {/* Floating Chat Bubble */}
-      {/* <ChatBubble meetingId={meetingId} meetingTitle={meeting.title} /> */}
+      <ChatBubble meetingId={meetingId} meetingTitle={meeting.title} />
     </Box>
   )
 }
