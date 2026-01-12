@@ -52,12 +52,12 @@ export default function HomePage() {
     }
   ];
 
-  const stats = [
-    { label: 'Languages Supported', value: '8+', icon: <FaLanguage /> },
-    { label: 'Processing Speed', value: '< 2min', icon: <FaClock /> },
-    { label: 'Audio Quality', value: 'HD', icon: <FaPlay /> },
-    { label: 'Export Formats', value: '3+', icon: <FaDownload /> }
-  ];
+  // const stats = [
+  //   { label: 'Languages Supported', value: '8+', icon: <FaLanguage /> },
+  //   { label: 'Processing Speed', value: '< 2min', icon: <FaClock /> },
+  //   { label: 'Audio Quality', value: 'HD', icon: <FaPlay /> },
+  //   { label: 'Export Formats', value: '3+', icon: <FaDownload /> }
+  // ];
 
   return (
     <Layout fullWidth bg="gray.50">
@@ -133,7 +133,7 @@ export default function HomePage() {
       </Box>
 
       {/* Stats Section */}
-      <Box py={12} bg="white" w="100%" pl={{ base: 0, md: "220px" }}>
+      {/* <Box py={12} bg="white" w="100%" pl={{ base: 0, md: "220px" }}>
         <Box 
           maxW="1200px" 
           mx="auto" 
@@ -157,7 +157,7 @@ export default function HomePage() {
             ))}
           </Stack>
         </Box>
-      </Box>
+      </Box> */}
 
       {/* Features Section */}
       <Box py={16} w="100%" pl={{ base: 0, md: "220px" }}>
