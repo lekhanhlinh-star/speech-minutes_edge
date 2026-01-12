@@ -4,10 +4,10 @@ import {
   FaUpload, 
   FaFileAlt, 
   FaClipboardList,
-  FaPlay,
-  FaDownload,
-  FaClock,
-  FaLanguage,
+  // FaPlay,
+  // FaDownload,
+  // FaClock,
+  // FaLanguage,
   FaChevronRight,
   FaRocket
 } from 'react-icons/fa';
