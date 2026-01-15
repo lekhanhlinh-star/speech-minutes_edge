@@ -30,6 +30,8 @@ const useSmartPolling = () => {
   const lastFetchRef = useRef<number>(0)
   const lastDataRef = useRef<string>('') // Để so sánh data có thay đổi không
 
+  const navigate = useNavigate();
+
   const fetchMeetings = useCallback(async (isPollingCall = false) => {
     // Tránh gọi API quá thường xuyên (debounce)
     const now = Date.now()
@@ -92,6 +94,11 @@ const useSmartPolling = () => {
         const hasProcessing = mapped.some((meeting: any) => meeting.status === "Processing");
         setIsPolling(prev => prev !== hasProcessing ? hasProcessing : prev); // Chỉ update khi thay đổi
         
+      } else if (res.status === 401) {
+        // 401 Unauthorized - clear token and redirect to login
+        localStorage.removeItem("token");
+        navigate("/login", { replace: true });
+        return;
       } else if (res.status === 404) {
         // 404 means no files exist yet - show empty state instead of error
         setMeetings([]);
@@ -126,7 +133,7 @@ const useSmartPolling = () => {
       // Chỉ tắt loading cho manual calls
       if (!isPollingCall) setLoading(false);
     }
-  }, [retryCount]);
+  }, [retryCount, navigate]);
 
   // Smart polling effect
   useEffect(() => {
